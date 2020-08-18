@@ -28,7 +28,7 @@ $(document).ready(function () {
                 // creates the string from the drink name db details
                 let drinkName = $("<h3>").addClass("card-title").text(data.drinks[0].strDrink);
                 let drinkGlass = $("<h4>").addClass("card-subtitle").text(data.drinks[0].strGlass);
-                let drinkImage = $("<img>").attr("src", data.drinks[0].strDrinkThumb);
+                let drinkImage = $("<img height='150vh'>").attr("src", data.drinks[0].strDrinkThumb);
                 console.log(drinkName)
 
                 let drinkIngredients = $("<li>").addClass("").text(data.drinks[0].strIngredient1);
@@ -52,19 +52,19 @@ $(document).ready(function () {
         })
     };
 
-    function searchSong(cocktailValue) {
-        $.ajax({
-            type: "GET",
-            url: "https://api.audiomack.com/search_autosuggest",
-            dataType: "json",
-            success: function (data) {
-                console.log(data);
+    // function searchSong(cocktailValue) {
+    //     $.ajax({
+    //         type: "GET",
+    //         url: "https://api.audiomack.com/search_autosuggest",
+    //         dataType: "json",
+    //         success: function (data) {
+    //             console.log(data);
 
 
 
-            }
-        })
-    };
+    //         }
+    //     })
+    // };
 
 });
 
