@@ -36,14 +36,22 @@ $(document).ready(function () {
 
                 let card = $("<div>").addClass("card");
                 let cardBody = $("<div>").addClass("card-body");
+                let listRows = $("<div>").addClass("row");
+                let ingredCol = $("<div>").addClass("col-6");
+                let measCol = $("<div>").addClass("col-6");
                 let ingredientList = $("<ul>").addClass("");
                 let measureList = $("<ul>").addClass("");
                 // let ingredientList = $("<li>").addClass("");
                 // let measureList = $("<li>").addClass("");
 
+                
+                
                 ingredientList.append(drinkIngredients);
                 measureList.append(drinkMeasure);
-                cardBody.append(drinkName, drinkGlass, drinkImage, ingredientList, measureList);
+                ingredCol.append(ingredientList);
+                measCol.append(measureList);
+                listRows.append(ingredCol, measCol);
+                cardBody.append(drinkName, drinkGlass, drinkImage, listRows);
 
                 card.append(cardBody);
                 $("#cocktail").append(card);
