@@ -43,13 +43,16 @@ $(document).ready(function () {
                 let drinkIngredients5 = $("<li>").addClass("").text(data.drinks[0].strIngredient5);
                 let drinkMeasure5 = $("<li>").addClass("").text(data.drinks[0].strMeasure5);
 
+                // displays drink ingredients and measurements in 2 columns
                 let card = $("<div>").addClass("card");
                 let cardBody = $("<div>").addClass("card-body");
                 let listRows = $("<div>").addClass("row");
-                let ingredCol = $("<div>").addClass("col-6");
-                let measCol = $("<div>").addClass("col-6");
-                let ingredientList = $("<ul>").addClass("");
-                let measureList = $("<ul>").addClass("");
+                let measCol = $("<div>").addClass("col-3 text-right");
+                let ingredCol = $("<div>").addClass("col-3 text-left");
+                let emptyCol1 = $("<div>").addClass("col-3");
+                let emptyCol2 = $("<div>").addClass("col-3");
+                let ingredientList = $("<ul>").addClass("drinkClasses");
+                let measureList = $("<ul>").addClass("drinkClasses measurements");
                 // let ingredientList = $("<li>").addClass("");
                 // let measureList = $("<li>").addClass("");
 
@@ -59,8 +62,8 @@ $(document).ready(function () {
                 measureList.append(drinkMeasure1, drinkMeasure2, drinkMeasure3, drinkMeasure4, drinkMeasure5);
                 ingredCol.append(ingredientList);
                 measCol.append(measureList);
-                listRows.append(measCol, ingredCol);
-                cardBody.append(drinkName, drinkGlass, drinkImage, listRows);
+                listRows.append(emptyCol1, measCol, ingredCol, emptyCol2);
+                cardBody.append(drinkName, drinkImage, listRows);
 
                 card.append(cardBody);
                 $("#cocktail").append(card);
