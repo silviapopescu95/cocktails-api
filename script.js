@@ -17,7 +17,7 @@ $(document).ready(function () {
             url: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + cocktailValue,
             dataType: "json",
             success: function (data) {
-                // console.log(data);
+                console.log(data);
                 // console.log(data.drinks[0].strDrink)
                 // console.log(data.drinks[0].strGlass)
 
@@ -26,11 +26,13 @@ $(document).ready(function () {
 
                 // creates the string from the drink name db detail
                 let drinkName = $("<h3>").addClass("card-title").text(data.drinks[0].strDrink);
+                let drinkGlass = $("<h4>").addClass("card-subtitle").text(data.drinks[0].strGlass);
+                let drinkImage = $("<img>").attr("src", data.drinks[0].strDrinkThumb);
                 console.log(drinkName)
                 let card = $("<div>").addClass("card");
                 let cardBody = $("<div>").addClass("card-body");
 
-                cardBody.append(drinkName);
+                cardBody.append(drinkName, drinkGlass, drinkImage);
                 card.append(cardBody);
                 $("#cocktail").append(card);
 
