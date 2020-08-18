@@ -2,11 +2,12 @@ $(document).ready(function () {
     // Accepts user input from on user's click
     $("#cocktail-search").on("click", function () {
         // let cocktailValue = $("#cocktail-value").val();
-        let cocktailValue = "margarita"
+        let cocktailValue = "gimlet"
         // clears input field
         $("#cocktail-search").val("");
 
         searchCocktail(cocktailValue);
+        searchSong();
     });
     // function to create a list here
 
@@ -24,15 +25,26 @@ $(document).ready(function () {
                 // clear any old content
                 $("#cocktail").empty();
 
-                // creates the string from the drink name db detail
+                // creates the string from the drink name db details
                 let drinkName = $("<h3>").addClass("card-title").text(data.drinks[0].strDrink);
                 let drinkGlass = $("<h4>").addClass("card-subtitle").text(data.drinks[0].strGlass);
                 let drinkImage = $("<img>").attr("src", data.drinks[0].strDrinkThumb);
                 console.log(drinkName)
+
+                let drinkIngredients = $("<li>").addClass("").text(data.drinks[0].strIngredient1);
+                let drinkMeasure = $("<li>").addClass("").text(data.drinks[0].strMeasure1);
+
                 let card = $("<div>").addClass("card");
                 let cardBody = $("<div>").addClass("card-body");
+                let ingredientList = $("<ul>").addClass("");
+                let measureList = $("<ul>").addClass("");
+                // let ingredientList = $("<li>").addClass("");
+                // let measureList = $("<li>").addClass("");
 
-                cardBody.append(drinkName, drinkGlass, drinkImage);
+                ingredientList.append(drinkIngredients);
+                measureList.append(drinkMeasure);
+                cardBody.append(drinkName, drinkGlass, drinkImage, ingredientList, measureList);
+
                 card.append(cardBody);
                 $("#cocktail").append(card);
 
@@ -40,4 +52,19 @@ $(document).ready(function () {
         })
     };
 
+    function searchSong(cocktailValue) {
+        $.ajax({
+            type: "GET",
+            url: "https://api.audiomack.com/search_autosuggest",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+
+
+
+            }
+        })
+    };
+
 });
+
