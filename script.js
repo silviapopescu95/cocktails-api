@@ -1,8 +1,8 @@
 $(document).ready(function () {
     // Accepts user input from on user's click
     $("#cocktail-search").on("click", function () {
-        // let cocktailValue = $("#cocktail-value").val();
-        let cocktailValue = "gimlet"
+        let cocktailValue = $("#cocktail-value").val();
+        // let cocktailValue = "gimlet"
         // clears input field
         $("#cocktail-search").val("");
 
