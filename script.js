@@ -30,6 +30,7 @@ $(document).ready(function () {
                 let drinkGlass = $("<h4>").addClass("card-subtitle").text(data.drinks[0].strGlass);
                 let drinkImage = $("<img height='150vh'>").attr("src", data.drinks[0].strDrinkThumb);
                 console.log(drinkName);
+                let instructions = $("<p>").addClass("drinkInst").text(data.drinks[0].strInstructions);
                 `               
 `               // gets ingredients and their respective measurements
                 let drinkIngredients1 = $("<li>").addClass("").text(data.drinks[0].strIngredient1);
@@ -63,7 +64,7 @@ $(document).ready(function () {
                 ingredCol.append(ingredientList);
                 measCol.append(measureList);
                 listRows.append(emptyCol1, measCol, ingredCol, emptyCol2);
-                cardBody.append(drinkName, drinkImage, listRows);
+                cardBody.append(drinkName, drinkImage, listRows, instructions);
 
                 card.append(cardBody);
                 $("#cocktail").append(card);
