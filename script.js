@@ -47,12 +47,12 @@ $(document).ready(function () {
                 let card = $("<div>").addClass("card");
                 let cardBody = $("<div>").addClass("card-body");
                 let listRows = $("<div>").addClass("row");
-                let measCol = $("<div>").addClass("col-3 text-right");
-                let ingredCol = $("<div>").addClass("col-3 text-left");
-                let emptyCol1 = $("<div>").addClass("col-3");
-                let emptyCol2 = $("<div>").addClass("col-3");
+                let measCol = $("<div>").addClass("col-md-3 text-right");
+                let ingredCol = $("<div>").addClass("col-md-3 text-left");
+                let emptyCol1 = $("<div>").addClass("col-md-3");
+                let emptyCol2 = $("<div>").addClass("col-md-3");
                 let ingredientList = $("<ul>").addClass("drinkClasses");
-                let measureList = $("<ul>").addClass("drinkClasses measurements");
+                let measureList = $("<ul>").addClass("drinkClasses measure");
                 // let ingredientList = $("<li>").addClass("");
                 // let measureList = $("<li>").addClass("");
 

@@ -1,8 +1,17 @@
+ h3 {
+    text-transform: uppercase;
+}
+.card {
+    border-radius: 0px;
+    border: none;
+}
 .drinkClasses {
+    margin: 20px 0;
     list-style-type: none;
     padding: 0;
 }
 
-ul.measurements {
-    padding: 0;
+#footer-text {
+    color: #fff;
+    padding: 30px 0;
 }
